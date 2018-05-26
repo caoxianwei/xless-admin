@@ -27,7 +27,7 @@ export const receiveData = (data, category) => ({
  * @param params
  * @param stateName
  */
-export const fecthData = ({funcName, params, stateName}) => dispatch => {
+export const fetchData = ({funcName, params, stateName}) => dispatch => {
     !stateName && (stateName = funcName);
     dispatch(requestData(stateName))
     return http[funcName](params).then(res => (dispatch(receiveData(res, stateName))))
